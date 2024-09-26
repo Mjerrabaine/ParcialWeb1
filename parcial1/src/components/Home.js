@@ -34,6 +34,7 @@ const Home = ({ user }) => {
   
     return (
         <div className="home">
+
         <div className={`image-grid ${getGridClass()}`}>
           {images.map((url, index) => (
             <img
@@ -45,13 +46,11 @@ const Home = ({ user }) => {
           ))}
         </div>
         <ImageModal user={user} show={showModal} imageUrl={modalImageUrl} onClose={() => setShowModal(false)} />
-
         <div className="user-details">
             <img src={profilePic} alt="Profile" className="profile-picture" />
             <h2>{user.nombre}</h2>
             <p><strong>{user.longitud_entrenamiento}</strong></p>
             <p>{user.duracion}</p>
-            <a href={user.url}>{user.ciudad}</a>
         </div>
       </div>
     );
